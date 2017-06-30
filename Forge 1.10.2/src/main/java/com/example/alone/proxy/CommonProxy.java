@@ -1,9 +1,17 @@
 package com.example.alone.proxy;
 
-/**
- * Created by Manke on 26/06/2017.
- */
-public interface CommonProxy {
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-    public void init();
+
+public class CommonProxy {
+
+    public void preInit(FMLPreInitializationEvent event){}
+
+    public void init(FMLInitializationEvent event){}
+
+    public void postInit(FMLPostInitializationEvent event){}
+
+
 }

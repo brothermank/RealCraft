@@ -1,12 +1,24 @@
 package com.example.alone.proxy;
 
-/**
- * Created by Manke on 26/06/2017.
- */
-public class ServerProxy implements  CommonProxy {
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+public class ServerProxy extends  CommonProxy {
+
 
     @Override
-    public void init() {
+    public void preInit(FMLPreInitializationEvent event) {
+
+    }
+
+    @Override
+    public void init(FMLInitializationEvent event) {
+
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 }

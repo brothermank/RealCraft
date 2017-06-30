@@ -1,14 +1,14 @@
 [
 {
-  "modid": "ALONE",
+  "modid": "alone",
   "name": "Alogically Natural Entities",
   "description": "Makes your NPC become real boys",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Divinity"],
-  "credits": "The Forge and FML guys, for making this framework",
+  "authorList": ["Divinity", "ViciousBadger", "SSODelta"],
+  "credits": "The Forge and FML guys, for making Forge and FML",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

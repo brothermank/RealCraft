@@ -1,2 +1,8 @@
-item.cannabis.name=Cannabis
-item.cracker.name=Cracker
+#English US Language File (default)
+
+#Creative tabs
+itemGroup.funny_tab="Funny Tab"
+
+#Items
+item.itemcannabis.name=Cannabis
+item.itemcracker.name=Cracker

@@ -1,5 +1,6 @@
 package com.example.alone;
 
+import com.example.alone.CreativeTabs.FunnyCreativeTab;
 import com.example.alone.init.ModItems;
 import com.example.alone.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -14,30 +15,37 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
 public class Alone
 {
-    @Instance
-    public static Alone instance;
+    //@Instance
+    //public static Alone instance;
 
+    @Mod.Instance
+    public static Alone modInstance; //Whats the difference between these two instances? Which should be used when?
+
+    //Use proxy for server/client specific operations (such as using Minecraft instance which is unly available on client side).
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static CommonProxy proxy;
 
+
+    public static FunnyCreativeTab  funnyTab;
+
+    //Forge calls initialization events, dont call manually
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
-        System.out.print("Alone Pre Init");
+        funnyTab = new FunnyCreativeTab(FunnyCreativeTab.getNextID(), "funny_tab");
 
-        ModItems.init();
-        ModItems.register();
+        ModItems.preInit();
+
+        proxy.preInit(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event){
-        System.out.print("Alone Init");
-        proxy.init();
+        proxy.init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event){
-        System.out.print("Alone Post Init");
-
+        proxy.postInit(event);
     }
 
 
